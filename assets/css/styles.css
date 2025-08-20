@@ -61,11 +61,14 @@ section {
 .personal-projects {
   background-color: var(--color-bg-projects);
   color: var(--color-fg-text);
+
+  .fa {
+    display: inline;
+  }
 }
 
 .fa {
   padding: 1.25rem;
-  font-size: 2rem;
   width: 4.6rem;
   text-align: center;
   text-decoration: none;
@@ -94,6 +97,10 @@ nav {
     border: none;
     margin-right: 1rem;
   }
+}
+
+a {
+  font-size: 1.25rem;
 }
 
 footer {
