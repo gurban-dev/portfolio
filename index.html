@@ -43,17 +43,56 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center p-8">
-    <h2 class="
-      text-4xl md:text-5xl
-      font-bold mb-4 fade-slide
-    ">
-      Hello, my name is Dennis
-    </h2>
+  <section class="
+    min-h-screen flex flex-col
+    md:flex-row items-center
+    justify-center p-8 gap-8
+  ">
+    <!-- Left Side: Intro + Buttons -->
+    <div class="flex-1 space-y-6 fade-slide">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">
+        Hello, my name is Dennis
+      </h2>
 
-    <p class="text-lg md:text-xl fade-slide">
-      Software Engineer | Python, TypeScript, React, Next.js, Django, SQL
-    </p>
+      <!-- md:
+           This is a responsive prefix in Tailwind CSS, indicating
+           that the following utility class should only apply when
+           the screen width is at or above the "medium" breakpoint.
+           The default md breakpoint is typically 768px. -->
+      <p class="text-xl md:text-2xl">
+        Software Engineer | Python, TypeScript, React, Next.js, Django, SQL
+      </p>
+
+      <!-- Buttons -->
+      <div class="flex flex-wrap gap-4 justify-center md:justify-start mt-6">
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/dennis-gurban/" target="_blank"
+          class="flex items-center gap-2 px-4 py-2 rounded-lg shadow-md border hover:bg-blue-600 hover:text-white transition">
+          <i class="fa fa-linkedin-square fa-lg"></i>
+          LinkedIn
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com/gurbanoglu" target="_blank"
+          class="flex items-center gap-2 px-4 py-2 rounded-lg shadow-md border hover:bg-gray-800 hover:text-white transition">
+          <i class="fa fa-github fa-lg"></i>
+          GitHub
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:dennisgurban44@gmail.com"
+          class="flex items-center gap-2 px-4 py-2 rounded-lg shadow-md border hover:bg-red-600 hover:text-white transition">
+          <i class="fa fa-envelope fa-lg"></i>
+          Email
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Side: Profile Image -->
+    <div class="flex-1 flex justify-center mt-10 md:mt-0 fade-slide">
+      <img src="assets/images/circular-profile-pic.png" alt="Dennis Gurban Profile"
+        class="w-48 h-48 md:w-64 md:h-64 rounded-full shadow-lg object-cover">
+    </div>
   </section>
 
   <!-- About Section -->
@@ -62,8 +101,11 @@
     justify-center items-center
     p-8 transition-colors duration-500
   ">
-    <h2 class="text-3xl font-semibold mb-6 fade-slide">About Me</h2>
-    <p class="max-w-2xl text-left fade-slide">
+    <h2 class="text-4xl font-semibold mb-6 fade-slide">
+      About Me
+    </h2>
+
+    <p class="text-2xl max-w-3xl text-left fade-slide">
       I am a software engineer with professional experience in Java,
       TypeScript, JavaScript, Angular, SQL, and Spring Web MVC,
       complemented by project work in React, Next.js, Express, and
@@ -81,25 +123,113 @@
     </p>
   </section>
 
-  <!-- Projects Section -->
-  <section class="min-h-screen flex flex-col justify-center items-center p-8">
-    <h2 class="text-3xl font-semibold mb-6 fade-slide">Projects</h2>
-    <div class="grid md:grid-cols-2 gap-8">
-      <!-- Project 1 -->
-      <div class="p-6 border rounded shadow hover:scale-105 transform transition duration-500 fade-slide">
-        <h3 class="text-2xl font-bold mb-2">Task Management System</h3>
-        <p>React + Node.js + Express + SQLite. Full CRUD and responsive UI.</p>
+  <!-- Personal Projects Section -->
+  <section class="
+    min-h-screen flex flex-col
+    justify-center items-center p-8
+    transition-colors duration-500
+  ">
+    <h2 class="
+      text-3xl md:text-4xl
+      font-semibold mb-10
+      text-center fade-slide
+    ">
+      Projects
+    </h2>
+
+    <div class="
+      grid grid-cols-1 md:grid-cols-2
+      lg:grid-cols-3 gap-8 w-full max-w-6xl
+    ">
+      <!-- ReactJS Express Task Management System -->
+      <div class="
+        personal-projects
+        p-6 border rounded-2xl shadow-lg
+        hover:scale-105 transform transition
+        duration-500 flex flex-col
+        justify-between fade-slide
+      ">
+        <div>
+          <h3 class="text-2xl font-bold mb-2">
+            Task Management System
+          </h3>
+
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="badge">React</span>
+            <span class="badge">Node.js</span>
+            <span class="badge">Express</span>
+            <span class="badge">SQLite</span>
+            <span class="badge">REST API</span>
+          </div>
+
+          <p class="text-xl font-medium mb-4">
+            Responsive ReactJS task management app with full CRUD
+            functionality via a Node.js, Express, and SQLite backend.
+            Integrated RESTful APIs deliver a scalable, user-friendly
+            full-stack system demonstrating robust development skills.
+          </p>
+        </div>
+
+        <!-- GitHub & Website Links -->
+        <div class="flex gap-4 mt-2">
+          <a href="https://github.com/gurbanoglu/FullStack-TaskManager" target="_blank"
+            class="text-gray-800 dark:text-gray-200 hover:text-gray-500 transition text-2xl">
+            <i class="fa fa-github"></i>
+          </a>
+          <a href="https://fullstack-taskmanager.onrender.com" target="_blank"
+            class="text-blue-600 hover:text-blue-400 transition text-2xl">
+            <i class="fa fa-external-link"></i>
+          </a>
+        </div>
       </div>
-      <!-- Project 2 -->
-      <div class="p-6 border rounded shadow hover:scale-105 transform transition duration-500 fade-slide">
-        <h3 class="text-2xl font-bold mb-2">Blog Platform</h3>
-        <p>Django + Python. Secure login, facial recognition, and user content management.</p>
+
+      <!-- Django Blog Platform -->
+      <div class="
+        personal-projects
+        p-6 border rounded-2xl shadow-lg
+        hover:scale-105 transform transition
+        duration-500 flex flex-col
+        justify-between fade-slide
+      ">
+        <div>
+          <h3 class="text-2xl font-bold mb-2">
+            Blog Platform
+          </h3>
+
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="badge">Django</span>
+            <span class="badge">Python</span>
+            <span class="badge">OpenCV</span>
+            <span class="badge">Facial Recognition</span>
+            <span class="badge">REST APIs</span>
+          </div>
+
+          <p class="text-xl font-medium mb-4">
+            Developed a secure Django-based blog platform with Python,
+            featuring user authentication with password verification
+            and facial recognition using OpenCV. Enabled users to
+            create, edit, and manage content while maintaining strong
+            security and a seamless login experience.
+          </p>
+        </div>
+
+        <!-- GitHub & Website Links -->
+        <div class="flex gap-4 mt-2">
+          <a href="https://github.com/gurbanoglu/Senior-Project" target="_blank"
+            class="text-gray-800 dark:text-gray-200 hover:text-gray-500 transition text-2xl">
+            <i class="fa fa-github"></i>
+          </a>
+          <a href="https://blog-post-platform-le4w.onrender.com/" target="_blank"
+            class="text-blue-600 hover:text-blue-400 transition text-2xl">
+            <i class="fa fa-external-link"></i>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section class="
+  <!-- <section class="
     min-h-screen flex flex-col
     justify-center items-center
     p-8 transition-colors duration-500
@@ -111,7 +241,7 @@
         dennisgurban44@gmail.com
       </a>
     </p>
-  </section>
+  </section> -->
 
   <!-- Footer -->
   <footer class="p-6 text-center border-t">

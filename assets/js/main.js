@@ -42,3 +42,14 @@ themeToggleBtn.addEventListener('click', () => {
   const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
   applyTheme(newTheme);
 });
+
+// Tailwind CSS utility classes.
+const badgeClasses = "px-3 py-1 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-sm font-semibold";
+
+// Select all elements with the class "badge"
+const badges = document.querySelectorAll(".badge");
+
+// Apply the classes to each badge
+badges.forEach(badge => {
+  badge.className = badgeClasses;
+});

@@ -17,7 +17,7 @@
   --color-fg: #000000;
   --color-fg-text: #2c3e50;
 
-  --color-fg-send: #FFFFFF;
+  --color-bg-projects: #fff;
 
   --color-fg-send-hover-txt: #2c3e50;
   --color-fg-send-hover-background: #FFFFFF;
@@ -33,7 +33,7 @@
   --color-fg: #ffffff;
   --color-fg-text: rgb(252, 255, 193);
 
-  --color-fg-send: #2c3e50;
+  --color-bg-projects: rgb(0, 0, 0);
 
   --color-fg-send-hover-txt: #FFFFFF;
   --color-fg-send-hover-background: #2c3e50;
@@ -58,13 +58,18 @@ section {
   color: var(--color-fg-text);
 }
 
+.personal-projects {
+  background-color: var(--color-bg-projects);
+  color: var(--color-fg-text);
+}
+
 .fa {
-  padding: 20px;
+  padding: 1.25rem;
   font-size: 2rem;
   width: 4.6rem;
   text-align: center;
   text-decoration: none;
-  margin: 5px 2px;
+  margin: 0.3125rem 0;
   border-radius: 50%;
 }
 
@@ -81,11 +86,11 @@ nav {
   text-wrap: nowrap;
 
   .fa {
-    padding: 4px;
+    padding: 0.3rem;
   }
 
   button {
-    border-radius: 6px;
+    border-radius: 0.4rem;
     border: none;
     margin-right: 1rem;
   }
