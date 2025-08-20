@@ -68,3 +68,13 @@ const iconBackgrounds = document.querySelectorAll(".icon-background");
 iconBackgrounds.forEach(iconBackground => {
   iconBackground.className = iconBackgroundClasses;
 });
+
+const iconTextClasses = `
+  font-medium w-full text-center py-2
+  bg-white dark:bg-gray-800 rounded`;
+
+const iconTexts = document.querySelectorAll('.icon-text');
+
+iconTexts.forEach(iconText => {
+  iconText.className = iconTextClasses;
+})

@@ -26,6 +26,11 @@
     document.documentElement.setAttribute('data-theme', initialTheme);
 
     if(initialTheme === 'dark') document.documentElement.classList.add('dark');
+
+    // Enable class-based dark mode
+    tailwind.config = {
+      darkMode: 'class',
+    }
   </script>
 </head>
 <body class="
@@ -270,75 +275,109 @@
       <!-- Python -->
       <div class="icon-background">
         <img src="assets/icons/python.png" alt="Python" class="w-16 h-16 mb-2">
-        <span class="font-medium">Python</span>
+
+        <span class="icon-text">
+          Python
+        </span>
       </div>
 
       <!-- Java -->
       <div class="icon-background">
         <img src="assets/icons/java.png" alt="Java" class="w-16 h-16 mb-2">
-        <span class="font-medium">Java</span>
+
+        <span class="icon-text">
+          Java
+        </span>
       </div>
 
       <!-- TypeScript -->
       <div class="icon-background">
         <img src="assets/icons/typescript.png" alt="TypeScript" class="w-16 h-16 mb-2">
-        <span class="font-medium">TypeScript</span>
+
+        <span class="icon-text">
+          TypeScript
+        </span>
       </div>
 
       <!-- JavaScript -->
       <div class="icon-background">
         <img src="assets/icons/javascript.svg" alt="JavaScript" class="w-16 h-16 mb-2">
-        <span class="font-medium">JavaScript</span>
+
+        <span class="icon-text">
+          JavaScript
+        </span>
       </div>
 
        <!-- HTML5 -->
       <div class="icon-background">
         <img src="assets/icons/html5.svg" alt="HTML5" class="w-16 h-16 mb-2">
-        <span class="font-medium">HTML5</span>
+
+        <span class="icon-text">
+          HTML5
+        </span>
       </div>
 
       <!-- React -->
       <div class="icon-background">
         <img src="assets/icons/react.svg" alt="React" class="w-16 h-16 mb-2">
-        <span class="font-medium">React</span>
+
+        <span class="icon-text">
+          React
+        </span>
       </div>
 
       <!-- Next.js -->
       <div class="icon-background">
         <img src="assets/icons/nextjs.svg" alt="Next.js" class="w-16 h-16 mb-2">
-        <span class="font-medium">Next.js</span>
+
+        <span class="icon-text">
+          Next.js
+        </span>
       </div>
 
       <!-- Django -->
       <div class="icon-background">
         <img src="assets/icons/django.svg" alt="Django" class="w-16 h-16 mb-2">
-        <span class="font-medium">Django</span>
+
+        <span class="icon-text">
+          Django
+        </span>
       </div>
 
       <!-- SQL -->
       <div class="icon-background">
         <img src="assets/icons/sql.svg" alt="SQL" class="w-16 h-16 mb-2">
-        <span class="font-medium">SQL</span>
+
+        <span class="icon-text">
+          SQL
+        </span>
       </div>
 
       <!-- Express -->
       <div class="icon-background">
         <img src="assets/icons/express-js.svg" alt="Express" class="w-16 h-16 mb-2">
-        <span class="font-medium">Express</span>
+
+        <span class="icon-text">
+          Express
+        </span>
       </div>
 
       <!-- Git -->
       <div class="icon-background">
         <img src="assets/icons/git.svg" alt="Git"
           class="w-16 h-16 mb-2">
-        <span class="font-medium">Git</span>
+
+        <span class="icon-text">
+          Git
+        </span>
       </div>
 
       <!-- Tailwind CSS -->
-      <div class="icon-background w-32 h-32 flex flex-col items-center justify-center bg-white rounded-lg">
+      <div class="icon-background">
         <img src="assets/icons/tailwind-css.svg"
             alt="Tailwind CSS" class="w-16 h-16 mb-2">
-        <span class="font-medium w-full text-center py-2 bg-white dark:bg-gray-800 rounded">
+
+        <span class="icon-text">
           Tailwind CSS
         </span>
       </div>
@@ -346,7 +385,10 @@
       <!-- SASS -->
       <div class="icon-background">
         <img src="assets/icons/sass.svg" alt="SASS" class="w-16 h-16 mb-2">
-        <span class="font-medium">SASS</span>
+
+        <span class="icon-text">
+          SASS
+        </span>
       </div>
     </div>
   </section>
