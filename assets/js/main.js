@@ -1,0 +1,44 @@
+// Scroll animation observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('show');
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.fade-slide').forEach(el => observer.observe(el));
+
+// Enterprise-ready Dark/Light toggle
+const themeToggleBtn = document.getElementById('theme-toggle-btn');
+const icon = themeToggleBtn.querySelector('i');
+
+const applyTheme = (theme) => {
+	console.log('theme:', theme);
+
+  document.documentElement.setAttribute('data-theme', theme);
+
+  if(theme === 'dark') {
+    document.documentElement.classList.add('dark');
+
+    icon.classList.remove('fa-sun-o');
+    icon.classList.add('fa-moon-o');
+  } else {
+    document.documentElement.classList.remove('dark');
+
+    icon.classList.remove('fa-moon-o');
+    icon.classList.add('fa-sun-o');
+  }
+
+	// Remember the user’s theme preference once
+	// the page reloads or the browser is closed.
+  localStorage.setItem('theme', theme);
+}
+
+// Set initial icon based on current theme
+const currentTheme = document.documentElement.getAttribute('data-theme');
+applyTheme(currentTheme);
+
+// Toggle theme on button click
+themeToggleBtn.addEventListener('click', () => {
+  const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  applyTheme(newTheme);
+});
