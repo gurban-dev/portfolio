@@ -86,8 +86,17 @@ iconTexts.forEach(iconText => {
 
 // Mobile menu toggle
 const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-const navLinks = document.getElementById('nav-links');
+const mobileNav = document.getElementById('mobile-nav');
 
 mobileMenuBtn.addEventListener('click', () => {
-  navLinks.classList.toggle('hidden');
+  mobileNav.classList.toggle('hidden');
+  mobileNav.classList.toggle('show');
+});
+
+// Close dropdown when clicking a link
+document.querySelectorAll('#mobile-nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileNav.classList.add('hidden');
+    mobileNav.classList.remove('show');
+  });
 });

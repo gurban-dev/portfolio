@@ -112,3 +112,53 @@ footer {
   background-color: var(--color-bg-main);
   color: var(--color-fg-main);
 }
+
+#mobile-nav {
+  transition: all 0.3s ease-in-out;
+  transform-origin: top right;
+  transform: scaleY(0);
+  opacity: 0;
+}
+
+#mobile-nav.show {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#hero, #projects, #skills {
+  scroll-margin-top: 6rem;
+}
+
+#work {
+  scroll-margin-top: 7rem;
+}
+
+#about {
+  scroll-margin-top: 5rem;
+}
+
+#academics {
+  scroll-margin-top: 3.5rem;
+}
+
+/* Mobile: swap hamburger and theme toggle */
+@media (max-width: 768px) {
+  #mobile-menu-btn {
+    /* Move after theme toggle button. */
+    order: 2;
+  }
+
+  #theme-toggle-btn {
+    /* Move before the hamburger menu button. */
+    order: 1;
+
+    /* Reset the left margin. */
+    margin-left: 0;
+
+    margin-right: 0.5rem;
+  }
+}
