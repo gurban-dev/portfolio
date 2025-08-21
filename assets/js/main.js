@@ -51,7 +51,11 @@ const badges = document.querySelectorAll(".badge");
 
 // Apply the classes to each badge
 badges.forEach(badge => {
-  badge.className = badgeClasses;
+  badge.className = `
+    px-3 py-1 bg-gray-200 dark:bg-gray-700
+    text-gray-800 dark:text-gray-200
+    rounded-full text-sm font-semibold
+    whitespace-nowrap`;
 });
 
 const iconBackgroundClasses = `
@@ -63,7 +67,11 @@ const iconBackgrounds = document.querySelectorAll(".icon-background");
 
 // Apply the classes to each badge
 iconBackgrounds.forEach(iconBackground => {
-  iconBackground.className = iconBackgroundClasses;
+  iconBackground.className = `
+    inline-flex flex-col items-center
+    bg-white dark:bg-gray-800
+    p-4 rounded shadow
+    w-24 sm:w-28 md:w-32`;
 });
 
 const iconTextClasses = `
@@ -75,3 +83,11 @@ const iconTexts = document.querySelectorAll('.icon-text');
 iconTexts.forEach(iconText => {
   iconText.className = iconTextClasses;
 })
+
+// Mobile menu toggle
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const navLinks = document.getElementById('nav-links');
+
+mobileMenuBtn.addEventListener('click', () => {
+  navLinks.classList.toggle('hidden');
+});
