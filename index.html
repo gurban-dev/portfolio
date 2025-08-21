@@ -11,8 +11,9 @@
 
   <link rel="stylesheet" href="assets/css/styles.css">
 
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
 
   <title>Dennis Gurban Portfolio</title>
 
@@ -47,74 +48,123 @@
     <nav>
       <h1 class="text-2xl font-bold">Dennis Gurban</h1>
 
-      <button id="theme-toggle-btn"
-        class="rounded border hover:bg-gray-200 dark:hover:bg-gray-700">
+      <!-- Navigation Links -->
+      <ul class="hidden md:flex space-x-6 font-medium">
+        <li>
+          <a href="#hero" class="hover:text-blue-600 transition">
+            Home
+          </a>
+        </li>
 
-        <!-- fa-2x means two times larger than the default. -->
-        <i class="fa fa-2x"></i>
+        <li>
+          <a href="#about" class="hover:text-blue-600 transition">
+            About
+          </a>
+        </li>
+
+        <li>
+          <a href="#work" class="hover:text-blue-600 transition">
+            Work
+          </a>
+        </li>
+
+        <li>
+          <a href="#academics" class="hover:text-blue-600 transition">
+            Education
+          </a>
+        </li>
+
+        <li>
+          <a href="#projects" class="hover:text-blue-600 transition">
+            Projects
+          </a>
+        </li>
+
+        <li>
+          <a href="#skills" class="hover:text-blue-600 transition">
+            Skills
+          </a>
+        </li>
+      </ul>
+
+      <button id="theme-toggle-btn"
+        class="group relative rounded-full p-3 border transition-all duration-300
+           hover:bg-gray-200 dark:hover:bg-gray-700 mr-6">
+
+        <i class="fas fa-moon fa-2x text-gray-800 dark:text-gray-200 transition-colors duration-300 group-hover:text-yellow-500"></i>
       </button>
     </nav>
   </header>
 
   <!-- Hero Section -->
-  <section class="
+  <section id="hero" class="
     min-h-screen flex flex-col
     md:flex-row items-center
     justify-center p-8 gap-8
   ">
-    <!-- Left Side: Intro + Buttons -->
+    <!-- Left Side -->
     <div class="flex-1 space-y-6 fade-slide">
       <h2 class="text-4xl md:text-5xl font-bold mb-4">
         Hello, my name is Dennis
       </h2>
 
       <!-- md:
-           This is a responsive prefix in Tailwind CSS, indicating
-           that the following utility class should only apply when
-           the screen width is at or above the "medium" breakpoint.
-           The default md breakpoint is typically 768px. -->
+          This is a responsive prefix in Tailwind CSS, indicating
+          that the following utility class should only apply when
+          the screen width is at or above the "medium" breakpoint.
+          The default md breakpoint is typically 768px. -->
       <p class="text-xl md:text-2xl">
         Software Engineer | Python, TypeScript, React, Next.js, Django, SQL
       </p>
 
-      <!-- Buttons -->
-      <div class="flex flex-wrap gap-4 justify-center md:justify-start mt-6">
+      <div class="
+        flex flex-wrap gap-4 justify-center
+        md:justify-start mt-6 flex-nowrap
+        overflow-x-auto
+      ">
         <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/dennis-gurban/" target="_blank"
-          class="
-            flex items-center gap-2 px-4
-            py-2 rounded-lg shadow-md border
-            hover:bg-blue-600 hover:text-white transition
-        ">
-          <i class="fa fa-linkedin-square fa-lg"></i>
+          class="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg shadow-md border
+                  hover:bg-blue-600 hover:text-white transition min-w-[150px]">
+          <i class="fab fa-linkedin fa-lg"></i>
           LinkedIn
+        </a>
+
+        <!-- Resume/Curriculum Vitae -->
+        <a href="./assets/pdf/Dennis Gurban - CV.pdf" target="_blank" rel="noopener noreferrer"
+          class="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg shadow-md border
+                  hover:bg-yellow-500 hover:text-white transition min-w-[150px]">
+          <i class="fa fa-file-alt fa-lg"></i>
+          Resume
         </a>
 
         <!-- GitHub -->
         <a href="https://github.com/gurban-dev" target="_blank"
-          class="flex items-center gap-2 px-4 py-2 rounded-lg shadow-md border hover:bg-gray-800 hover:text-white transition">
-          <i class="fa fa-github fa-lg"></i>
+          class="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg shadow-md border
+                  hover:bg-gray-800 hover:text-white transition min-w-[150px]">
+          <i class="fab fa-github fa-lg"></i>
           GitHub
         </a>
 
         <!-- Email -->
         <a href="mailto:dennisgurban44@gmail.com"
-          class="flex items-center gap-2 px-4 py-2 rounded-lg shadow-md border hover:bg-red-600 hover:text-white transition">
+          class="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg shadow-md border
+                  hover:bg-red-600 hover:text-white transition min-w-[150px]">
           <i class="fa fa-envelope fa-lg"></i>
           Email
         </a>
       </div>
     </div>
 
-    <!-- Right Side: Profile Image -->
-    <div class="flex-1 flex justify-center mt-10 md:mt-0 fade-slide">
+    <!-- Right Side -->
+    <div class="flex-1 flex justify-center items-start md:items-center fade-slide">
       <img src="assets/images/circular-profile-pic.png" alt="Dennis Gurban Profile"
         class="w-48 h-48 md:w-64 md:h-64 rounded-full shadow-lg object-cover">
     </div>
   </section>
 
   <!-- About Section -->
-  <section class="
+  <section id="about" class="
     min-h-screen flex flex-col
     justify-center items-center
     p-8 transition-colors duration-500
@@ -141,8 +191,173 @@
     </p>
   </section>
 
+  <!-- Work Experience Section -->
+  <section id="work" class="
+    min-h-screen flex flex-col
+    justify-center items-center
+    p-8 transition-colors duration-500
+  ">
+    <h2 class="text-3xl md:text-4xl font-semibold mb-10 fade-slide text-center">
+      Work Experience
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl">
+      <!-- UPS Experience -->
+      <div class="
+        white-black-bg
+        p-6 border rounded-2xl shadow-lg
+        hover:scale-105 transform transition
+        duration-500 fade-slide
+      ">
+        <h3 class="text-2xl font-bold mb-2">
+          Information Systems Management Co-op
+        </h3>
+
+        <p class="
+          text-gray-700 dark:text-gray-300
+          font-medium mb-2">
+          UPS | Apr 2022 - Oct 2024
+        </p>
+
+        <ul class="list-disc list-outside text-lg ml-5">
+          <li>
+            Reduced query execution time from 5s to 2s and cut
+            total completion time by 60% across millions of
+            queries by profiling database calls and resolving
+            key performance bottlenecks.
+          </li>
+
+          <li>
+            Decreased defect density by 30% and achieved 80% test
+            coverage by integrating automated unit and integration
+            testing into each sprint cycle, resulting in cleaner,
+            more reliable code.
+          </li>
+
+          <li>
+            Increased customer satisfaction by 15% by contributing
+            to the implementation of real-time package tracking
+            notifications, reducing support inquiries and improving
+            delivery transparency.
+          </li>
+
+          <li>
+            Improved application responsiveness by 10-15% by
+            implementing on-demand component loading, reducing
+            overall load times and enhancing user experience.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Preply Experience -->
+      <div class="
+        white-black-bg
+        p-6 border rounded-2xl shadow-lg
+        hover:scale-105 transform transition
+        duration-500 fade-slide
+      ">
+        <h3 class="text-2xl font-bold mb-2">
+          Python & Django Tutor
+        </h3>
+
+        <p class="
+          text-gray-700 dark:text-gray-300
+          font-medium mb-2">
+          Preply | Jul 2024 - Present
+        </p>
+
+        <ul class="list-disc list-outside text-lg ml-5">
+          <li>
+            Developed backend Django applications with RESTful APIs,
+            guiding students through real-world implementation and
+            best practices.
+          </li>
+
+          <li>
+            Taught Python data structures and algorithms, helping
+            students apply them to solve complex problems efficiently.
+          </li>
+
+          <li>
+            Provided hands-on instruction in version control with Git,
+            emphasizing collaborative workflows and code management.
+          </li>
+
+          <li>
+            Explained technical concepts clearly to students from
+            diverse backgrounds, adapting lessons to varying skill
+            levels.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Academic Background Section -->
+  <section id="academics" class="
+    min-h-screen flex flex-col
+    justify-center items-center
+    p-8 transition-colors duration-500
+  ">
+    <h2 class="
+      text-3xl md:text-4xl
+      font-semibold mb-10
+      fade-slide text-center
+    ">
+      Academic Background
+    </h2>
+
+    <div class="w-full max-w-2xl">
+      <div class="
+        white-black-bg
+        p-6 border rounded-2xl shadow-lg
+        hover:scale-105 transform transition
+        duration-500 fade-slide
+      ">
+        <h3 class="text-2xl font-bold mb-2">
+          <a 
+            href="https://www.ramapo.edu/majors-minors/majors/computer-science/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="
+              text-blue-600 underline
+              decoration-yellow-400
+              underline-offset-8
+              hover:text-yellow-400"
+          >
+            Ramapo College of New Jersey
+          </a>
+        </h3>
+
+        <p class="text-gray-700 dark:text-gray-300 font-medium mb-2">
+          Bachelor of Science in Computer Science | 2020 - 2023
+        </p>
+
+        <ul class="list-disc list-outside text-lg ml-5">
+          <li>
+            Gained deep knowledge of data structures, algorithms, and
+            software architectures like MVC, enabling the design of
+            scalable and maintainable applications.
+          </li>
+
+          <li>
+            Developed a Django web application, enhancing skills in
+            integrating third-party APIs, managing data effectively,
+            and structuring full-stack projects.
+          </li>
+
+          <li>
+            Studied software design principles such as separation of
+            concerns, redundancy, and failsafe design, to build robust,
+            reliable, and adaptable systems.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <!-- Personal Projects Section -->
-  <section class="
+  <section id="projects" class="
     min-h-screen flex flex-col
     justify-center items-center p-8
     transition-colors duration-500
@@ -168,10 +383,6 @@
         justify-between fade-slide
       ">
         <div>
-          <!-- <h3 class="text-2xl font-bold mb-2">
-            Task Management System
-          </h3> -->
-
           <!-- Top row: title + links -->
           <div class="flex justify-between items-start mb-4">
             <h3 class="text-2xl font-bold">
@@ -258,143 +469,7 @@
   </section>
 
   <!-- Technical Skills Section -->
-  <!-- <section class="
-    min-h-screen flex flex-col
-    justify-center items-center
-    p-8 transition-colors duration-500
-  ">
-    <h2 class="text-3xl md:text-4xl font-semibold mb-10 fade-slide text-center">
-      Technical Skills
-    </h2>
-
-    <div class="
-      grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6
-      gap-8 w-full max-w-4xl
-      text-center fade-slide
-    ">
-      <!-- Python --
-      <div class="icon-background">
-        <img src="assets/icons/python.png" alt="Python" class="w-16 h-16 mb-2">
-
-        <span class="icon-text">
-          Python
-        </span>
-      </div>
-
-      <!-- TypeScript --
-      <div class="icon-background">
-        <img src="assets/icons/typescript.png" alt="TypeScript" class="w-16 h-16 mb-2">
-
-        <span class="icon-text">
-          TypeScript
-        </span>
-      </div>
-
-      <!-- JavaScript --
-      <div class="icon-background">
-        <img src="assets/icons/javascript.svg" alt="JavaScript" class="w-16 h-16 mb-2">
-
-        <span class="icon-text">
-          JavaScript
-        </span>
-      </div>
-
-      <!-- HTML5 --
-      <div class="icon-background">
-        <img src="assets/icons/html5.svg" alt="HTML5" class="w-16 h-16 mb-2">
-
-        <span class="icon-text">
-          HTML5
-        </span>
-      </div>
-
-      <!-- CSS --
-      <div class="icon-background">
-        <img src="assets/icons/css.svg" alt="CSS" class="w-16 h-16 mb-2">
-
-        <span class="icon-text">
-          CSS
-        </span>
-      </div>
-
-      <!-- React --
-      <div class="icon-background">
-        <img src="assets/icons/react.svg" alt="React" class="w-16 h-16 mb-2">
-
-        <span class="icon-text">
-          React
-        </span>
-      </div>
-
-      <!-- Next.js --
-      <div class="icon-background">
-        <img src="assets/icons/nextjs.svg" alt="Next.js" class="w-16 h-16 mb-2">
-
-        <span class="icon-text">
-          Next.js
-        </span>
-      </div>
-
-      <!-- Django --
-      <div class="icon-background">
-        <img src="assets/icons/django.svg" alt="Django" class="w-16 h-16 mb-2">
-
-        <span class="icon-text">
-          Django
-        </span>
-      </div>
-
-      <!-- SQL --
-      <div class="icon-background">
-        <img src="assets/icons/sql.svg" alt="SQL" class="w-16 h-16 mb-2">
-
-        <span class="icon-text">
-          SQL
-        </span>
-      </div>
-
-      <!-- Express --
-      <div class="icon-background">
-        <img src="assets/icons/express-js.svg" alt="Express" class="w-16 h-16 mb-2">
-
-        <span class="icon-text">
-          Express
-        </span>
-      </div>
-
-      <!-- Git --
-      <div class="icon-background">
-        <img src="assets/icons/git.svg" alt="Git"
-          class="w-16 h-16 mb-2">
-
-        <span class="icon-text">
-          Git
-        </span>
-      </div>
-
-      <!-- Tailwind CSS --
-      <div class="icon-background">
-        <img src="assets/icons/tailwind-css.svg"
-            alt="Tailwind CSS" class="w-16 h-16 mb-2">
-
-        <span class="icon-text">
-          Tailwind CSS
-        </span>
-      </div>
-
-      <!-- SASS --
-      <div class="icon-background">
-        <img src="assets/icons/sass.svg" alt="SASS" class="w-16 h-16 mb-2">
-
-        <span class="icon-text">
-          SASS
-        </span>
-      </div>
-    </div>
-  </section> -->
-
-  <!-- Technical Skills Section -->
-  <section class="
+  <section id="skills" class="
     min-h-screen flex flex-col
     justify-center items-center
     p-8 transition-colors duration-500

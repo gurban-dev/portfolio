@@ -7,40 +7,37 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-slide').forEach(el => observer.observe(el));
 
-// Enterprise-ready Dark/Light toggle
 const themeToggleBtn = document.getElementById('theme-toggle-btn');
 const icon = themeToggleBtn.querySelector('i');
 
+// Apply theme and update icon
 const applyTheme = (theme) => {
-	console.log('theme:', theme);
+  console.log('theme:', theme);
 
   document.documentElement.setAttribute('data-theme', theme);
 
-  if(theme === 'dark') {
+  if (theme === 'dark') {
     document.documentElement.classList.add('dark');
-
-    icon.classList.remove('fa-moon-o');
-    icon.classList.add('fa-sun-o');
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
   } else {
     document.documentElement.classList.remove('dark');
-
-    icon.classList.remove('fa-sun-o');
-    icon.classList.add('fa-moon-o');
+    icon.classList.remove('fa-sun');
+    icon.classList.add('fa-moon');
   }
 
-	// Remember the user’s theme preference once
-	// the page reloads or the browser is closed.
+  // Save preference
   localStorage.setItem('theme', theme);
 }
 
-// Set initial icon based on current theme
-const currentTheme = document.documentElement.getAttribute('data-theme');
-applyTheme(currentTheme);
+// Load saved theme on page load
+const savedTheme = localStorage.getItem('theme') || 'light';
+applyTheme(savedTheme);
 
 // Toggle theme on button click
 themeToggleBtn.addEventListener('click', () => {
-  const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-  applyTheme(newTheme);
+  const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
 });
 
 // Tailwind CSS utility classes.

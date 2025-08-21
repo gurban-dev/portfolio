@@ -58,6 +58,11 @@ section {
   color: var(--color-fg-text);
 }
 
+.white-black-bg {
+  background-color: var(--color-bg-projects);
+  color: var(--color-fg-text);
+}
+
 .personal-projects {
   background-color: var(--color-bg-projects);
   color: var(--color-fg-text);
