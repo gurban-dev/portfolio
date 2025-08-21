@@ -43,11 +43,6 @@
   <header class="flex justify-between items-center p-6 sticky top-0 dark:bg-gray-900 z-50 shadow-md">
     <h1 class="text-2xl font-bold">Dennis Gurban</h1>
 
-    <!-- Mobile Menu Button -->
-    <button id="mobile-menu-btn" class="md:hidden p-3 rounded-md border">
-      <i class="fas fa-bars fa-lg"></i>
-    </button>
-
     <!-- Desktop Navigation -->
     <ul id="nav-links" class="hidden md:flex space-x-6 font-medium">
       <li><a href="#hero" class="hover:text-blue-600 transition">Home</a></li>
@@ -57,6 +52,19 @@
       <li><a href="#projects" class="hover:text-blue-600 transition">Projects</a></li>
       <li><a href="#skills" class="hover:text-blue-600 transition">Skills</a></li>
     </ul>
+
+    <!-- Buttons Container -->
+    <div class="flex items-center space-x-3">
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-3 rounded-md border">
+        <i class="fas fa-bars fa-lg"></i>
+      </button>
+
+      <!-- Theme Toggle Button -->
+      <button id="theme-toggle-btn" class="group relative rounded-full p-3 border transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700">
+        <i class="fas fa-moon fa-2x text-gray-800 dark:text-gray-200 transition-colors duration-300 group-hover:text-yellow-500"></i>
+      </button>
+    </div>
 
     <!-- Mobile Dropdown Menu -->
     <ul id="mobile-nav"
@@ -70,11 +78,6 @@
       <li><a href="#projects" class="block hover:text-blue-600 transition">Projects</a></li>
       <li><a href="#skills" class="block hover:text-blue-600 transition">Skills</a></li>
     </ul>
-
-    <!-- Theme Toggle Button -->
-    <button id="theme-toggle-btn" class="group relative rounded-full p-3 border transition-all duration-300 hover:bg-gray-200 dark:hover:bg-gray-700 ml-4">
-      <i class="fas fa-moon fa-2x text-gray-800 dark:text-gray-200 transition-colors duration-300 group-hover:text-yellow-500"></i>
-    </button>
   </header>
 
   <!-- Hero Section -->
