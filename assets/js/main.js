@@ -12,7 +12,8 @@ const icon = themeToggleBtn.querySelector('i');
 
 // Apply theme and update icon
 const applyTheme = (theme) => {
-  console.log('theme:', theme);
+  // Logs the colour mode of the screen.
+  // console.log('theme:', theme);
 
   document.documentElement.setAttribute('data-theme', theme);
 
@@ -38,6 +39,36 @@ applyTheme(savedTheme);
 themeToggleBtn.addEventListener('click', () => {
   const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
   applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+});
+
+// For anchor tags in hero section.
+const baseClasses = `
+  flex-1 flex items-center justify-center gap-2 
+  px-4 py-2 rounded-lg shadow-md border 
+  hover:bg-blue-600 hover:text-white transition
+`;
+
+// Optionally, define specific hover classes for each link
+const hoverClasses = [
+  // LinkedIn
+  "hover:bg-blue-600 hover:text-white",
+
+  // Resume
+  "hover:bg-yellow-500 hover:text-white",
+
+  // GitHub
+  "hover:bg-gray-800 hover:text-white",
+
+  // Email
+  "hover:bg-red-600 hover:text-white"
+];
+
+// Get all anchor tags inside the container
+const links = document.querySelectorAll("#links-container a");
+
+// Assign the classes
+links.forEach((link, index) => {
+  link.className = `${baseClasses} ${hoverClasses[index]}`;
 });
 
 // Tailwind CSS utility classes.
