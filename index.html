@@ -2,7 +2,7 @@
 <!-- The class="scroll-smooth" is a Tailwind CSS utility
      class that enables smooth scrolling behavior when
      the page scrolls via links, anchors, or JavaScript. -->
-<html lang="en" data-theme="light" class="scroll-smooth">
+<html lang="en" data-theme="light" class="scroll-smooth light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,12 +63,13 @@
         class="
           group relative rounded-full p-3
           border transition-all duration-300
+          bg-neutral-700
           hover:bg-gray-200 dark:hover:bg-gray-700
       ">
         <i class="
-          fas fa-moon fa-2x text-gray-800
-          dark:text-gray-200 transition-colors
-          duration-300 group-hover:text-yellow-500
+          fas fa-moon fa-2x text-gray-200
+          transition-colors duration-300
+          hover:text-yellow-500
         "></i>
       </button>
     </div>
@@ -88,7 +89,11 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="hero" class="min-h-screen flex flex-col md:flex-row items-center justify-center p-6 md:p-8 gap-6">
+  <section id="hero" class="
+    min-h-screen flex flex-col md:flex-row
+    items-center justify-center p-6 md:p-8
+    gap-6
+  ">
     <!-- Left Side -->
     <div class="flex-[1.5] space-y-4 fade-slide text-center md:text-left">
       <h2 class="text-3xl md:text-5xl font-bold mb-2">
@@ -99,21 +104,29 @@
         Software Engineer | Python, TypeScript, React, Next.js, Django, SQL
       </p>
 
-      <div id="links-container" class="flex gap-4 flex-wrap justify-center mt-4">
-        <a href="https://www.linkedin.com/in/dennis-gurban/" target="_blank">
+      <div class="grid grid-cols-4 gap-2
+                  max-[1068px]:grid-cols-2
+                  max-[500px]:grid-cols-1">
+        <a href="https://www.linkedin.com/in/dennis-gurban/"
+          target="_blank"
+          class="anchor-tag linkedin-btn">
           <i class="fab fa-linkedin fa-lg"></i> LinkedIn
         </a>
 
         <a href="./assets/pdf/Dennis Gurban - CV.pdf"
-          target="_blank" rel="noopener noreferrer">
+          target="_blank"
+          class="anchor-tag resume-btn"
+          rel="noopener noreferrer">
           <i class="fa fa-file-alt fa-lg"></i> Resume
         </a>
 
-        <a href="https://github.com/gurban-dev" target="_blank">
+        <a href="https://github.com/gurban-dev" target="_blank"
+          class="anchor-tag github-btn">
           <i class="fab fa-github fa-lg"></i> GitHub
         </a>
 
-        <a href="mailto:dennisgurban44@gmail.com">
+        <a href="mailto:dennisgurban44@gmail.com"
+          class="anchor-tag email-btn">
           <i class="fa fa-envelope fa-lg"></i> Email
         </a>
       </div>

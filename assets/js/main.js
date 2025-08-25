@@ -13,18 +13,53 @@ const icon = themeToggleBtn.querySelector('i');
 // Apply theme and update icon
 const applyTheme = (theme) => {
   // Logs the colour mode of the screen.
-  // console.log('theme:', theme);
+  console.log('theme:', theme);
 
   document.documentElement.setAttribute('data-theme', theme);
 
+  const html = document.documentElement;
+
   if (theme === 'dark') {
-    document.documentElement.classList.add('dark');
+    console.log('Switching to dark mode.');
+
+    html.classList.remove('light');
+
+    html.classList.add('dark');
+  } else {
+    console.log('Switching to light mode.');
+
+    html.classList.remove('dark');
+
+    html.classList.add('light');
+  }
+
+  // Update icon
+  const icon = themeToggleBtn.querySelector('i');
+
+  if (theme === 'dark') {
+    // The actual icon.
     icon.classList.remove('fa-moon');
     icon.classList.add('fa-sun');
+
+    // The background colour.
+    themeToggleBtn.classList.remove('bg-neutral-700');
+    themeToggleBtn.classList.add('bg-stone-50');
+
+    // The colour of the icon.
+    icon.classList.add('text-yellow-500');
+    icon.classList.remove('text-gray-200');
   } else {
-    document.documentElement.classList.remove('dark');
+    // The actual icon.
     icon.classList.remove('fa-sun');
     icon.classList.add('fa-moon');
+
+    // The background colour.
+    themeToggleBtn.classList.remove('bg-stone-50');
+    themeToggleBtn.classList.add('bg-neutral-700');
+
+    // The colour of the icon.
+    icon.classList.add('text-yellow-500');
+    icon.classList.remove('text-gray-200');
   }
 
   // Save preference
@@ -100,7 +135,7 @@ const iconBackgrounds = document.querySelectorAll(".icon-background");
 iconBackgrounds.forEach(iconBackground => {
   iconBackground.className = `
     inline-flex flex-col items-center
-    bg-white dark:bg-gray-800
+    bg-white dark:bg-gray-700
     p-4 rounded shadow
     w-24 sm:w-28 md:w-32`;
 });
