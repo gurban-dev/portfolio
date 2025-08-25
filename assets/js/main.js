@@ -8,7 +8,6 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-slide').forEach(el => observer.observe(el));
 
 const themeToggleBtn = document.getElementById('theme-toggle-btn');
-const icon = themeToggleBtn.querySelector('i');
 
 // Apply theme and update icon
 const applyTheme = (theme) => {
@@ -17,26 +16,12 @@ const applyTheme = (theme) => {
 
   document.documentElement.setAttribute('data-theme', theme);
 
-  const html = document.documentElement;
-
-  if (theme === 'dark') {
-    console.log('Switching to dark mode.');
-
-    html.classList.remove('light');
-
-    html.classList.add('dark');
-  } else {
-    console.log('Switching to light mode.');
-
-    html.classList.remove('dark');
-
-    html.classList.add('light');
-  }
-
-  // Update icon
+  // Update toggle colour mode icon.
   const icon = themeToggleBtn.querySelector('i');
 
   if (theme === 'dark') {
+    console.log('Enabling dark mode.');
+
     // The actual icon.
     icon.classList.remove('fa-moon');
     icon.classList.add('fa-sun');
@@ -49,6 +34,8 @@ const applyTheme = (theme) => {
     icon.classList.add('text-yellow-500');
     icon.classList.remove('text-gray-200');
   } else {
+    console.log('Enabling light mode.');
+
     // The actual icon.
     icon.classList.remove('fa-sun');
     icon.classList.add('fa-moon');
@@ -72,7 +59,8 @@ applyTheme(savedTheme);
 
 // Toggle theme on button click
 themeToggleBtn.addEventListener('click', () => {
-  const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+
   applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
 });
 
